@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import './App.css'
+import { BarsIcon, XmarkIcon, GithubIcon, FacebookIcon, InstagramIcon, CircleCheckIcon } from './components/Icons'
 
 function Reveal({ children }) {
   const ref = useRef(null)
@@ -130,7 +131,7 @@ function App() {
           aria-label="Toggle navigation"
           aria-expanded={navOpen}
         >
-          <i className={`fa-solid ${navOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+          {navOpen ? <XmarkIcon /> : <BarsIcon />}
         </button>
 
         <div className={`nav-links${navOpen ? ' open' : ''}`}>
@@ -183,7 +184,7 @@ function App() {
                 </div>
                 <div className="project-links">
                   <a href={p.github} target="_blank" rel="noopener noreferrer">
-                    <i className="fa-brands fa-github"></i> GitHub
+                    <GithubIcon /> GitHub
                   </a>
                   <a href={p.demo} target="_blank" rel="noopener noreferrer" className="demo-link">
                     Live Demo
@@ -236,7 +237,7 @@ function App() {
 
               {sent && (
                 <div className={`alert alert-success${fading ? ' fading' : ''}`} role="alert" aria-live="polite">
-                  <i className="fa-solid fa-circle-check"></i> Your email app should open with the message ready to send.
+                  <CircleCheckIcon /> Your email app should open with the message ready to send.
                 </div>
               )}
             </form>
@@ -247,17 +248,17 @@ function App() {
             <ul className="contact-list">
               <li>
                 <a href="https://github.com/Caelusary" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-github"></i> GitHub
+                  <GithubIcon /> GitHub
                 </a>
               </li>
               <li>
                 <a href="https://www.facebook.com/zacharyscott.ruiz" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-facebook"></i> Facebook
+                  <FacebookIcon /> Facebook
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/definitely_notzach" target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-instagram"></i> Instagram
+                  <InstagramIcon /> Instagram
                 </a>
               </li>
             </ul>
