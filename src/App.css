@@ -385,6 +385,10 @@ h1, h2, h3 {
   border: 1px solid rgba(46, 204, 113, 0.4);
 }
 
+html.dark .alert-success {
+  color: #58d68d;
+}
+
 .contact-form button {
   align-self: flex-start;
   background: var(--text);
