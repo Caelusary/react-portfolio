@@ -291,7 +291,7 @@ body {
   color: var(--bg);
 }
 
-.contact-list a i {
+.contact-list a svg {
   font-size: 1rem;
 }
 
