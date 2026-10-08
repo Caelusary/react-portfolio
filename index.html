@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <script>
       (function () {
-        var stored = localStorage.getItem('theme');
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
         var isDark = stored ? stored === 'dark' : true;
         if (isDark) document.documentElement.classList.add('dark');
       })();
