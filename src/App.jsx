@@ -229,7 +229,7 @@ function App() {
 
               {sent && (
                 <div className={`alert alert-success${fading ? ' fading' : ''}`} role="alert" aria-live="polite">
-                  <i className="fa-solid fa-circle-check"></i> Your message has been sent successfully!
+                  <i className="fa-solid fa-circle-check"></i> Your email app should open with the message ready to send.
                 </div>
               )}
             </form>
