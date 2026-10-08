@@ -64,13 +64,20 @@ function App() {
   const [fading, setFading] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
   const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem('theme')
-    return stored ? stored : 'dark'
+    try {
+      return localStorage.getItem('theme') || 'dark'
+    } catch {
+      return 'dark'
+    }
   })
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
+    try {
+      localStorage.setItem('theme', theme)
+    } catch {
+      // storage blocked; theme still applies for this visit
+    }
   }, [theme])
 
   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))
